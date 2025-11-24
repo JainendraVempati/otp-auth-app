@@ -13,24 +13,28 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors()); // allow all origins for simplicity
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Home page route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'home.html'));
+});
 
 // Serve static frontend files from /public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
+// Auth routes
 app.use('/api/auth', authRoutes);
 
-// Basic health-check route
+// Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK' });
 });
 
 const PORT = process.env.PORT || 3000;
 
-// IMPORTANT: bind to 0.0.0.0 so it’s accessible on LAN
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`💡 Server running on:`);
   console.log(`   Local:   http://localhost:${PORT}`);

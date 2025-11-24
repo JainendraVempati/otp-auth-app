@@ -6,13 +6,15 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-body {
+/* Auth pages (login / signup) */
+.auth-body {
   background: linear-gradient(135deg, #4f46e5, #6366f1);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 .container {
   width: 100%;
@@ -174,3 +176,104 @@ hr {
     font-size: 1.6rem;
   }
 }
+/* ========================= */
+/* Home page (MedZoom AI)    */
+/* ========================= */
+
+.home-page {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5faff;
+  color: #111827;
+}
+
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 100px;
+  gap: 40px;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: #ffffff;
+}
+
+.home-hero-text {
+  max-width: 520px;
+}
+
+.home-hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.home-hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  color: #e5e7eb;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.home-btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease, color 0.1s ease;
+}
+
+.home-btn-login {
+  background-color: #ffffff;
+  color: #0d47a1;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.25);
+}
+
+.home-btn-login:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.3);
+}
+
+.home-btn-signup {
+  background-color: #0b2c73;
+  color: #ffffff;
+}
+
+.home-btn-signup:hover {
+  background-color: #061b49;
+}
+
+.home-hero-image {
+  max-width: 480px;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.55);
+}
+
+/* Make home hero responsive */
+@media (max-width: 900px) {
+  .home-hero {
+    flex-direction: column-reverse;
+    padding: 40px 20px 60px;
+    text-align: center;
+  }
+
+  .home-hero-text {
+    max-width: 100%;
+  }
+
+  .home-buttons {
+    justify-content: center;
+  }
+
+  .home-hero-title {
+    font-size: 2.4rem;
+  }
+}
+
