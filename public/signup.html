@@ -1,0 +1,73 @@
+<!-- public/signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signup - OTP Auth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Sign Up</h1>
+
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="signup-name">Name</label>
+          <input type="text" id="signup-name" placeholder="Enter your name" required />
+          <small class="error" id="signup-name-error"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" placeholder="Enter your email" required />
+          <small class="error" id="signup-email-error"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" placeholder="Enter password" required />
+          <small class="error" id="signup-password-error"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-confirm-password">Confirm Password</label>
+          <input type="password" id="signup-confirm-password" placeholder="Confirm password" required />
+          <small class="error" id="signup-confirm-password-error"></small>
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+
+      <div id="otp-section" class="hidden">
+        <hr />
+        <h2>Verify OTP</h2>
+        <p class="subtitle">We have sent a 6-digit OTP to your email.</p>
+
+        <div class="form-group">
+          <label for="otp-email">Email</label>
+          <input type="email" id="otp-email" readonly />
+        </div>
+
+        <div class="form-group">
+          <label for="otp-code">OTP</label>
+          <input type="text" id="otp-code" placeholder="Enter 6-digit OTP" maxlength="6" />
+          <small class="error" id="otp-error"></small>
+        </div>
+
+        <button id="verify-otp-btn" class="btn">Verify OTP</button>
+        <button id="resend-otp-btn" class="btn-outline">Resend OTP</button>
+      </div>
+
+      <p class="switch-auth">
+        Already have an account?
+        <a href="login.html">Log in</a>
+      </p>
+
+      <div id="signup-message" class="message"></div>
+    </div>
+  </div>
+</body>
+</html>
